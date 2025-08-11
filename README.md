@@ -1,98 +1,61 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image:
-    radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-    linear-gradient(-45deg, #b7c0ed, #c0fff3, #ffdae0, #e6d0ff);
-  background-size: 20px 20px, 400% 400%;
-  animation: dotsMove 10s linear infinite, bgMove 12s ease infinite;
-}
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Wonder Pets</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff0f5, #e0ffff);
+      font-family: Arial, sans-serif;
+    }
 
-@keyframes dotsMove {
-  0% {
-    background-position: 0 0, 0% 50%;
-  }
-  100% {
-    background-position: 100px 100px, 100% 50%;
-  }
-}
+    header {
+      text-align: center;
+      background-color: #555;
+      padding: 20px;
+    }
 
-header {
-  background: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('team.jpeg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 2em 0;
-  text-align: center;
-}
+    .glow-title {
+      font-size: 2.5rem;
+      color: cyan;
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+    }
 
-.team {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
+    .team {
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
 
-.member {
-  background-color: black;
-  border: 2px solid gold;
-  border-radius: 8px;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 250px;
-}
+    .team img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
 
-.member.leader {
-  border: 2px solid gold; 
-}
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="glow-title">Group Wonder Pets</h1>
+  </header>
 
-.member img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
+  <section class="team">
+    <img src="group-wonder-pets.png" alt="Group Wonder Pets">
+  </section>
 
-h2 {
-  color: #fafafa;
-  margin: 10px 0;
-}
-
-.role {
-  color: white; 
-  font-style: Arial;
-}
-
-.quote {
-  color: white;
-  font-style: italic;
-  margin-top: 10px;
-  font-size: 0.95em;
-  opacity: 0.9;
-}
-
-.glow-title {
-  font-size: 3em;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-
-footer p {
-  font-size: 15px; 
-}
+  <footer>
+    <p>&copy; 2025 Our Group Page</p>
+  </footer>
+</body>
+</html>
