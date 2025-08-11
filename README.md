@@ -1,40 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Our Team</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1 class="glow-title">Group Wonder Pets</h1>
-  </header>
-  <section class="team">
-    <div class="member leader">
-      <img src="MAEEE.jpeg" alt="Leader">
-      <h2>Mae Anne Aragon</h2>
-      <p class="role">Team Leader</p>
-      <p class="quote">""Syntax error? Mas masakit pa yan sa syntax error ng puso."."</p>
-    </div>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    linear-gradient(-45deg, #b7c0ed, #c0fff3, #ffdae0, #e6d0ff);
+  background-size: 20px 20px, 400% 400%;
+  animation: dotsMove 10s linear infinite, bgMove 12s ease infinite;
+}
 
-    <div class="member">
-      <img src="ANAAA.jpeg" alt="Ana Bechachino">
-      <h2>Ana Bechachino</h2>
-      <p class="role">Member 1</p>
-      <p class="quote">"Hirap sa IT, pero hindi sumusuko.
-Sa bawat error, natututo."</p>
-    </div>
+@keyframes dotsMove {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+  100% {
+    background-position: 100px 100px, 100% 50%;
+  }
+}
 
-    <div class="member">
-      <img src="Gaas.jpeg" alt="Jay Gil T. Ga-as">
-      <h2>Jay Gil T. Ga-as</h2>
-      <p class="role">Member 2</p>
-      <p class="quote">"Choice ko talaga IT kasi puro computer naman ako."</p>
-    </div>
-  </section>
+header {
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('team.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 2em 0;
+  text-align: center;
+}
 
-  <footer>
-    <p>&copy; 2025 Our Group Page</p>
-  </footer>
-</body>
-</html>
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.member {
+  background-color: black;
+  border: 2px solid gold;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 250px;
+}
+
+.member.leader {
+  border: 2px solid gold; 
+}
+
+.member img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #fafafa;
+  margin: 10px 0;
+}
+
+.role {
+  color: white; 
+  font-style: Arial;
+}
+
+.quote {
+  color: white;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 0.95em;
+  opacity: 0.9;
+}
+
+.glow-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 15px; 
+}
