@@ -1,32 +1,10 @@
-<?php
-   /* Online PHP Compiler (Interpreter) and Editor */
-   echo "<p>Hello, World!</p>\n";
-?><?php
-$url = "https://jsonplaceholder.typicode.com/posts/1"; // Example HTTPS URL
-$response = file_get_contents($url);
-
-if ($response === FALSE) {
-    die("Error occurred");
-}
-
-echo $response;
-?>
-<?php
-$url = "https://jsonplaceholder.typicode.com/posts/1"; // Example HTTPS URL
-
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return the response as a string
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // Enable SSL verification
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);    // Check the existence of a common name and verify that it matches the hostname
-
-$response = curl_exec($ch);
-
-if (curl_errno($ch)) {
-    echo 'Curl error: ' . curl_error($ch);
-} else {
-    echo $response;
-}
-
-curl_close($ch);
-?>
-php https_request.php
+<?php$response = file_get_contents('https://api.example.com/data');if
+($response === FALSE) { // Handle error echo "Failed to retrieve
+data.";} else { echo $response;}?>
+<?php$data = array('name' => 'John Doe', 'email' =>
+'john.doe@example.com');$options = array( 'http' => array(
+'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+'method' => 'POST', 'content' => http_build_query($data),
+),);$context = stream_context_create($options);$result =
+file_get_contents('https://api.example.com/submit', false, $context);echo
+$result;?>
