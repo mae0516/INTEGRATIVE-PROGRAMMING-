@@ -3,7 +3,7 @@
 $grade = 85;
 
 if ($grade >= 75) {
-    echo "Congrats! 🎉 You passed the exam.<br>";
+    echo "Congrats! You passed the exam.<br>";
 }
 
 
@@ -11,9 +11,9 @@ if ($grade >= 75) {
 $isHungry = true;
 
 if ($isHungry) {
-    echo "You should eat something 🍔<br>";
+    echo "You should eat something <br>";
 } else {
-    echo "You're not hungry right now. Maybe later! 😊<br>";
+    echo "You're not hungry right now. Maybe later! <br>";
 }
 
 
@@ -21,14 +21,14 @@ if ($isHungry) {
 $weather = "rainy";
 
 if ($weather == "sunny") {
-    echo "It's sunny 🌞 Wear sunglasses and light clothes.<br>";
+    echo "It's sunny  Wear sunglasses and light clothes.<br>";
 } elseif ($weather == "rainy") {
-    echo "It's rainy 🌧️ Don't forget your umbrella!<br>";
+    echo "It's rainy Don't forget your umbrella!<br>";
 } elseif ($weather == "cold") {
-    echo "It's cold 🥶 Wear a jacket.<br>";
+    echo "It's cold Wear a jacket.<br>";
 } else {
-    echo "Weather is unpredictable 🤔 Just be ready!<br>";
-}
+    echo "Weather is unpredictable Just be ready!<br>";
+
 
 
 // 4. switch statement - Suggest an activity based on the day
@@ -36,21 +36,21 @@ $day = "Saturday";
 
 switch ($day) {
     case "Monday":
-        echo "Back to work 💼<br>";
+        echo "Back to work <br>";
         break;
     case "Wednesday":
-        echo "Halfway through the week! ⏳<br>";
+        echo "Halfway through the week! <br>";
         break;
     case "Friday":
-        echo "TGIF! 🎉 Movie night maybe?<br>";
+        echo "TGIF! Movie night maybe?<br>";
         break;
     case "Saturday":
-        echo "Weekend vibes! 🏖️ Time to relax.<br>";
+        echo "Weekend vibes! Time to relax.<br>";
         break;
     case "Sunday":
-        echo "Family day ❤️<br>";
+        echo "Family day <br>";
         break;
     default:
-        echo "Just another day... 🌍<br>";
+        echo "Just another day...<br>";
 }
 ?>
