@@ -3,6 +3,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $group = htmlspecialchars($_POST['group']);
+
+    // Group images
+    $images = [
+        "Linny" => "images/linny.jpg",
+        "Tuck" => "images/tuck.jpg",
+        "Ming-Ming" => "images/mingming.jpg"
+    ];
+    $groupImage = $images[$group] ?? "images/default.jpg";
 } else {
     header("Location: index.html");
     exit();
@@ -16,14 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #a18cd1, #fbc2eb, #fad0c4);
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      background-size: 300% 300%;
+      animation: gradientBG 10s ease infinite;
       height: 100vh;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-size: 300% 300%;
-      animation: gradientBG 6s ease infinite;
     }
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
@@ -31,47 +39,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       100% { background-position: 0% 50%; }
     }
     .card {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.9);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-      width: 420px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(25px);
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      width: 450px;
       text-align: center;
       animation: fadeIn 1s ease-in-out;
+      color: #fff;
+    }
+    .card img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #fff;
+      object-fit: cover;
     }
     h2 {
-      color: #333;
       margin-bottom: 20px;
+      font-size: 26px;
+      font-weight: 600;
     }
     table {
       width: 100%;
-      border-collapse: collapse;
       margin-top: 15px;
+      font-size: 15px;
     }
     td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
+      padding: 10px;
       text-align: left;
+      color: #fff;
     }
     td:first-child {
       font-weight: bold;
-      color: #ff758c;
+      color: #ffe066;
       width: 35%;
     }
     a {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 12px 20px;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      background: linear-gradient(135deg, #43cea2, #185a9d);
       color: #fff;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
       transition: 0.3s;
+      font-weight: bold;
     }
     a:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(255, 118, 136, 0.6);
+      box-shadow: 0 6px 15px rgba(24, 90, 157, 0.6);
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
@@ -81,7 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <div class="card">
-    <h2>✅ Registration Successful!</h2>
+    <img src="<?php echo $groupImage; ?>" alt="<?php echo $group; ?>">
+    <h2>🎉 Registration Successful!</h2>
     <table>
       <tr>
         <td>Name:</td>
