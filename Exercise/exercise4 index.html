@@ -6,63 +6,81 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       height: 100vh;
-      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-size: 300% 300%;
-      animation: gradientBG 6s ease infinite;
+      margin: 0;
+      overflow: hidden;
     }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    /* Floating animated background circles */
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: float 15s infinite ease-in-out;
     }
-    .card {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.8);
-      padding: 30px;
+    .circle1 { width: 250px; height: 250px; background: #ff7eb3; top: -50px; left: -80px; }
+    .circle2 { width: 300px; height: 300px; background: #42e695; bottom: -100px; right: -120px; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-40px); }
+    }
+
+    .form-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-      width: 380px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      width: 400px;
       text-align: center;
-      animation: fadeIn 1s ease-in-out;
+      color: #fff;
+      animation: fadeIn 1.2s ease-in-out;
     }
+
     h2 {
-      color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      font-size: 24px;
+      font-weight: 600;
     }
+
     input, select {
-      width: 100%;
+      width: 90%;
       padding: 12px;
-      margin: 10px 0;
-      border: none;
+      margin: 12px 0;
       border-radius: 10px;
-      font-size: 14px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    input:focus, select:focus {
+      border: none;
       outline: none;
-      box-shadow: 0 0 8px rgba(255, 99, 132, 0.8);
+      font-size: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
     }
+
     button {
+      margin-top: 20px;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
       background: linear-gradient(135deg, #ff758c, #ff7eb3);
       color: #fff;
-      padding: 12px;
-      border: none;
-      width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
       font-size: 16px;
-      margin-top: 10px;
+      cursor: pointer;
       transition: 0.3s;
+      font-weight: bold;
+      width: 95%;
     }
     button:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(255, 118, 136, 0.6);
+      box-shadow: 0 6px 20px rgba(255, 118, 136, 0.6);
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -70,18 +88,21 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>🐾 The Wonder Pets Registration</h2>
+  <!-- Background circles -->
+  <div class="bg-circle circle1"></div>
+  <div class="bg-circle circle2"></div>
+
+  <div class="form-card">
+    <h2>🐹🐢🦆 Wonder Pets Registration</h2>
     <form method="POST" action="process.php">
-      <input type="text" name="name" placeholder="Enter your full name" required>
+      <input type="text" name="name" placeholder="Enter your name" required>
       <input type="email" name="email" placeholder="Enter your email" required>
       <select name="group" required>
-        <option value="">-- Select Group --</option>
-        <option value="Linny the Guinea Pig">Linny the Guinea Pig</option>
-        <option value="Tuck the Turtle">Tuck the Turtle</option>
-        <option value="Ming-Ming the Duckling">Ming-Ming the Duckling</option>
+        <option value="Linny">Linny the Guinea Pig</option>
+        <option value="Tuck">Tuck the Turtle</option>
+        <option value="Ming-Ming">Ming-Ming the Duckling</option>
       </select>
-      <button type="submit">✨ Register</button>
+      <button type="submit">🚀 Register Now</button>
     </form>
   </div>
 </body>
